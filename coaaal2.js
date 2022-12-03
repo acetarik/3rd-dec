@@ -1,4 +1,19 @@
 document.getElementById("submitButton").onclick=function (){
+    // document.getElementById('l1').classList.add('burb');
+    document.getElementById('div8').classList.remove('div8');
+    document.getElementById('div9').classList.remove('div9');
+    document.getElementById('div6').classList.remove('div6');
+    document.getElementById('div10').classList.remove('div10');
+    document.getElementById('div1').classList.remove('div1');
+    document.getElementById('div2').classList.remove('div2');
+    document.getElementById('div3').classList.remove('div3');
+    document.getElementById('div4').classList.remove('div4');
+    document.getElementById('div5').classList.remove('div5');
+    document.getElementById('div7').classList.remove('div8');
+    document.getElementById('div11').classList.remove('div11');
+    document.getElementById('div12').classList.remove('div12');
+    document.getElementById('div13').classList.remove('div13');
+    document.getElementById('div14').classList.remove('div14');
     components.set('PC',0);
     components.set('reg',0);
     document.getElementById('PC').classList.remove('anime');
