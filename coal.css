@@ -133,7 +133,7 @@ main{
     border-radius: 10px;
     box-shadow: 4px 4px 15px black;
 
-    width: 25%;
+    width: 40%;
     height: 750px;
     /*border-color: navajowhite;*/
 
@@ -304,8 +304,10 @@ main{
      font-family: Montserrat;
 }
 #displayMachineCode{
-    font-family: 'Rubik Glitch', cursive;
+    /*font-family: 'Rubik Glitch', cursive;*/
     color: #e2b714;
+    font-family: Montserrat;
+    animation-name: stroke-offset;
 }
 #displayMachineCode:hover{
     translate: 2px;
@@ -601,8 +603,8 @@ ul li{
 .overBasic{
     width: 100%;
     background-color:transparent ;
-    stroke:blue;
-    z-index: 90;
+    /*stroke:blue;*/
+    z-index: 9;
 }
 #inputlainawaladabba{
     width: 100%;
@@ -612,7 +614,6 @@ ul li{
     color: #e2b714;
     font-weight: bolder;
     font-family: Montserrat;
--webkit-text-stroke: thin;
     text-shadow: #171c1b;
 }
 #iinn{
@@ -639,4 +640,231 @@ border-radius: 20px;
     border-radius: 20px;
     /*overflow-x: hidden;*/
     /*overflow-wrap: anywhere;*/
+}
+
+.burb{
+
+}
+.div1{
+    animation: main 3s;
+    transform-origin: 0 0 0;
+}
+/**/
+@keyframes main {
+    0% {
+        height: 0px;
+        /*transform: scale(0);*/
+    }
+    50% {
+        height:6.5%;
+        /*transform: scale(10);*/
+    }
+
+
+}
+
+@keyframes mains2 {
+    0%{
+        width: 0;
+    }
+    50%{
+        width:10.9%;
+    }
+
+}
+@keyframes mains3 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 4%;
+    }
+
+}
+@keyframes mains4 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 4.2%;
+    }
+
+}
+@keyframes mains5 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 4.9%;
+    }
+
+}
+@keyframes mains7 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 4.9%;
+    }
+
+}
+
+@keyframes mains6 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 4%;
+    }
+
+}
+
+.div2{
+    animation: mains2 3s;
+}
+.div3{
+    position:absolute;
+    bottom: 20%;
+    transform: rotateX(180deg);
+    animation: mains3 3s infinite;
+    transform-origin:top ;
+
+}
+.div4{
+    animation:mains4 3s infinite ;
+}
+.div5{
+    animation: mains5 3s infinite;
+}
+.div6{
+    position:absolute;
+    bottom: 20%;
+    transform: rotateX(180deg);
+    animation: mains6 3s;
+    transform-origin:top ;
+
+}
+.div7{
+    position:absolute;
+    bottom: 20%;
+    transform: rotateX(180deg);
+    animation: mains7 3s infinite;
+    transform-origin:top ;
+
+}
+@keyframes mains8 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 27%;
+    }
+
+}
+@keyframes mains9 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 32%;
+    }
+
+}
+@keyframes mains10 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 27%;
+    }
+
+}
+@keyframes mains11 {
+    0%{
+        width: 0;
+
+    }
+    50%{
+        width: 47%;
+    }
+
+}
+@keyframes mains12 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 30%;
+    }
+
+}
+@keyframes mains13 {
+    0%{
+        height: 0;
+
+    }
+    50%{
+        height: 30%;
+    }
+
+}
+
+.div8{
+    position:absolute;
+    bottom: 20%;
+    transform: rotateX(180deg);
+    transform-origin:top ;
+    animation: mains8 3s;
+}
+.div9{
+    animation: mains9 3s;
+}
+
+#div11{
+
+}
+.div10{
+    transform:rotateY(180deg);
+    position: absolute;
+    transform-origin: left;
+    animation: mains11 3s;
+}
+.div11{
+    transform:rotateX(180deg);
+    position: absolute;
+    transform-origin: top;
+    animation: mains12 3s ;
+}
+.div12{
+    animation: mains13 3s;
+
+}
+@keyframes mains13 {
+    0%{
+        width: 0;
+
+    }
+    50%{
+        width: 12%;
+    }
+
+}
+
+.div13{
+    transform:rotateY(180deg);
+    position: absolute;
+    transform-origin: left;
+    animation: mains13 3s;
+}
+.div14{
+    animation: mains13 3s;
 }

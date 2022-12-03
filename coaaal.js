@@ -1,4 +1,6 @@
 //data structures: map for instructions with functions, registers with sizes
+
+
 let regSize = new Map([
     ["AX", 16],["BX", 16],["CX", 16],["DX", 16],
     ["AH", 8],["BH", 8],["CH", 8],["DH", 8],
@@ -72,6 +74,73 @@ function regisLit( dest){
 
 
 }
+function setdiv1(){
+    document.getElementById('div1').classList.add('div1')}
+
+function memtoregflow(source){
+    document.getElementById('div8').classList.add('div8');
+    setTimeout(()=>{
+        document.getElementById('div9').classList.add('div9');
+    },3000)
+    setTimeout(()=>{
+        document.getElementById('div6').classList.add('div6');
+    },5000)
+    setTimeout(()=>{
+        document.getElementById('div11').classList.add('div11');
+    },8000)
+
+    setTimeout(()=>{
+        document.getElementById('div12').classList.add('div12');
+    },11000)
+    setTimeout(()=>{
+        document.getElementById('div2').classList.add('div2');
+    },14000)
+    setTimeout(()=>{
+        document.getElementById('div10').classList.add('div10');
+    },17000)
+
+    // setTimeout(setdiv1());
+    // document.getElementById('div1').classList.add('div1');
+    highLiter();
+    let regu=(regkey+'X').toLowerCase();
+    console.log(regu);
+    regisLit(regu);
+    memoryLit(source);
+
+}
+// function immtoreg(){
+//     document.getElementById('div8').classList.add('div8');
+//     setTimeout(()=>{
+//         document.getElementById('div9').classList.add('div9');
+//     },3000)
+//     setTimeout(()=>{
+//         document.getElementById('div6').classList.add('div6');
+//     },5000)
+// }
+function immtoreg(){
+    document.getElementById('div8').classList.add('div8');
+    setTimeout(()=>{
+        document.getElementById('div9').classList.add('div9');
+    },3000)
+    setTimeout(()=>{
+        document.getElementById('div6').classList.add('div6');
+    },5000)
+    setTimeout(()=>{
+        document.getElementById('div2').classList.add('div2');
+    },8000)
+    setTimeout(()=>{
+        document.getElementById('div10').classList.add('div10');
+    },11000)
+
+    // setTimeout(setdiv1());
+    // document.getElementById('div1').classList.add('div1');
+    highLiter();
+    let regu=(regkey+'X').toLowerCase();
+    console.log(regu);
+    regisLit(regu);
+    // memoryLit(source);
+
+}
 
 //mov imm to reg
 function movregtoimm(reg,value){
@@ -109,10 +178,43 @@ function movregtoimm(reg,value){
     let regu=(regkey+'X').toLowerCase();
     console.log(regu);
     regisLit(regu);
+    immtoreg();
     /////////////////////Arslan nai imm to reg Likh lia////
 }
 
 // mov reg to reg
+function regtoregflow(source){
+    document.getElementById('div8').classList.add('div8');
+    setTimeout(()=>{
+        document.getElementById('div9').classList.add('div9');
+    },3000)
+    setTimeout(()=>{
+        document.getElementById('div6').classList.add('div6');
+    },5000)
+    setTimeout(()=>{
+        document.getElementById('div13').classList.add('div13');
+    },8000)
+
+    setTimeout(()=>{
+        document.getElementById('div14').classList.add('div14');
+    },11000)
+    setTimeout(()=>{
+        document.getElementById('div2').classList.add('div2');
+    },14000)
+    setTimeout(()=>{
+        document.getElementById('div10').classList.add('div10');
+    },17000)
+
+    // setTimeout(setdiv1());
+    // document.getElementById('div1').classList.add('div1');
+    // highLiter();
+    // let regu=(regkey+'X').toLowerCase();
+    // console.log(regu);
+    // regisLit(regu);
+    // memoryLit(source);
+
+}
+
 function movregtoreg(dest,source){
     if ((regSize.has(source) && regSize.has(dest))&&(regSize.get(source)===regSize.get(source)))
     {
@@ -143,6 +245,7 @@ function movregtoreg(dest,source){
         regisLit(regu);
 
         regisLit(source.toLowerCase());
+        regtoregflow();
 
     }
 }
@@ -170,11 +273,7 @@ function movmemtoreg(dest,source){
         components.set("memory",1);
         components.set("ALU",1);
         components.set("reg",1);
-        highLiter();
-        let regu=(regkey+'X').toLowerCase();
-        console.log(regu);
-        regisLit(regu);
-        memoryLit(source);
+        memtoregflow(source);
 
     }
     else{console.log("invalid mem location or dest reg")}
@@ -233,7 +332,29 @@ function movregtomem(dest,source){
     }
     else{console.log("invalid mem location or source reg");}
 }
+function addflow(){
+    document.getElementById('div8').classList.add('div8');
+    setTimeout(()=>{
+        document.getElementById('div9').classList.add('div9');
+    },3000)
+    setTimeout(()=>{
+        document.getElementById('div6').classList.add('div6');
+    },5000)
 
+    setTimeout(()=>{
+        document.getElementById('div13').classList.add('div13');
+    },8000)
+
+    setTimeout(()=>{
+        document.getElementById('div14').classList.add('div14');
+    },11000)
+    setTimeout(()=>{
+        document.getElementById('div2').classList.add('div2');
+    },14000)
+    setTimeout(()=>{
+        document.getElementById('div10').classList.add('div10');
+    },17000)
+}
 let instruction = new Map([
     ["MOV", function(dest,source){
         if (is_immediate(source))
@@ -304,6 +425,12 @@ let instruction = new Map([
             components.set("IR",1);
             components.set("ControlUnit",1);
             components.set("ALU",1);
+            components.set('reg',1);
+            // console.log
+            highLiter();
+            regisLit((regkey+'X').toLowerCase());
+            regisLit(source.toLowerCase());
+            regtoregflow();
         }
     }],
     ["SUB", function(dest,source){
@@ -351,7 +478,13 @@ let instruction = new Map([
             components.set("IR",1);
             components.set("ControlUnit",1);
             components.set("ALU",1);
+            components.set('reg',1)
+            highLiter();
+            regisLit(dest.toLowerCase());
+            regisLit(source.toLowerCase());
+            regtoregflow();
         }
+
     }],
     ["NEG", function(dest){
         if (regSize.has(dest)){
@@ -387,6 +520,10 @@ let instruction = new Map([
             components.set("IR",1);
             components.set("ControlUnit",1);
             components.set("ALU",1);
+            components.set('reg',1)
+            highLiter();
+            regisLit(dest.toLowerCase());
+            regtoregflow();
         }
     }],
     ["MUL", function(source){                                                               //INSTRUCTION 2
@@ -428,6 +565,11 @@ let instruction = new Map([
                 components.set("IR",1);
                 components.set("ControlUnit",1);
                 components.set("ALU",1);
+                components.set("reg",1);
+                highLiter();
+                regisLit(source.toLowerCase());
+                regisLit('ax');
+                regtoregflow();
             }}
     }],
     ["INC", function(reg){                                                                                   //INSTRUCTION 3
@@ -463,6 +605,10 @@ let instruction = new Map([
             components.set("IR",1);
             components.set("ControlUnit",1);
             components.set("ALU",1);
+            components.set("reg",1);
+            highLiter();
+            regisLit(reg.toLowerCase())
+            regtoregflow();
         }
         else {errordisplay();} //invalid reg
     }],
@@ -498,7 +644,10 @@ let instruction = new Map([
             components.set("IR",1);
             components.set("ControlUnit",1);
             components.set("ALU",1);
-
+            components.set("reg",1);
+            highLiter();
+            regisLit(reg.toLowerCase())
+            regtoregflow();
             //setreg(regkey+"X",value);
         }
         else {errordisplay();}
@@ -546,6 +695,12 @@ let instruction = new Map([
         components.set("IR",1);
         components.set("ControlUnit",1);
         components.set("ALU",1);
+        components.set("reg",1);
+        highLiter();
+        regisLit(dest.toLowerCase());
+        regisLit(source.toLowerCase());
+        regtoregflow();
+
     }],
     ["DIV", function(source){                                                                                    //INSTRUCTION 6
         if (regSize.has(source)){
@@ -602,6 +757,10 @@ let instruction = new Map([
                 components.set("IR",1);
                 components.set("ControlUnit",1);
                 components.set("ALU",1);
+                components.set("reg",1);
+                highLiter();
+                regisLit(source.toLowerCase());
+                regtoregflow();
             }
         }
         else{
@@ -651,6 +810,11 @@ let instruction = new Map([
         components.set("IR",1);
         components.set("ControlUnit",1);
         components.set("ALU",1);
+        components.set("reg",1);
+        highLiter();
+        regisLit(dest.toLowerCase());
+        regisLit(source.toLowerCase());
+        regtoregflow();
     }],
 
     ["NOT", function(dest){                                                                                 //INSTRUCTION 8
@@ -694,6 +858,10 @@ let instruction = new Map([
         components.set("IR",1);
         components.set("ControlUnit",1);
         components.set("ALU",1);
+        components.set("reg",1);
+        highLiter();
+        regisLit(dest.toLowerCase());
+        regtoregflow();
     }],
     ["XOR", function(dest, source){                                                                             //INSTRUCTION 9
         val1=regVal.get(source);
@@ -738,6 +906,11 @@ let instruction = new Map([
         components.set("IR",1);
         components.set("ControlUnit",1);
         components.set("ALU",1);
+        components.set("reg",1);
+        highLiter();
+        regisLit(dest.toLowerCase());
+        regisLit(source.toLowerCase());
+        regtoregflow();
     }],
     ["SHR", function(source,shift){                                                                         //INSTRUCTION 10
         size = regSize.get(source);
@@ -773,6 +946,11 @@ let instruction = new Map([
         components.set("IR",1);
         components.set("ControlUnit",1);
         components.set("ALU",1);
+        components.set("reg",1);
+        highLiter();
+
+        regisLit(source.toLowerCase());
+        regtoregflow();
 
     }],
 
@@ -811,7 +989,11 @@ let instruction = new Map([
         components.set("IR",1);
         components.set("ControlUnit",1);
         components.set("ALU",1);
-
+        components.set("reg",1);
+        highLiter();
+        regisLit(dest.toLowerCase());
+        regisLit(source.toLowerCase());
+        regtoregflow();
     }],
     ["NOP", function(){}],["", function(){
         components.set("PC", 1);
